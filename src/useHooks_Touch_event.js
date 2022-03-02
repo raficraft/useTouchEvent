@@ -51,7 +51,6 @@ export default function useHooks_Touch_event(ref) {
   };
 
   const getTranslate = (p1, p2) => {
-    console.log(p1, p2);
     return p1 - p2;
   };
 
@@ -83,7 +82,6 @@ export default function useHooks_Touch_event(ref) {
     e.preventDefault();
     e = getPointer(e);
 
-    console.log("start", e);
     setOnTouch((S) => ({
       ...S,
       start: true,
@@ -101,8 +99,6 @@ export default function useHooks_Touch_event(ref) {
   };
 
   const handleEnd = (event) => {
-    console.log("end");
-
     setOnTouch((S) => ({
       ...S,
       start: false,
@@ -125,7 +121,6 @@ export default function useHooks_Touch_event(ref) {
   const handleMove = (e) => {
     if (onTouch.start) {
       e = getPointer(e);
-      console.log("move", e);
 
       setOnTouch((S) => ({
         ...S,
@@ -195,7 +190,6 @@ export default function useHooks_Touch_event(ref) {
 
   useEffect(() => {
     const element = ref.current;
-    console.log("run hooks", window);
 
     element.addEventListener("mousedown", handleStart, true);
     window.addEventListener("mouseup", handleEnd, true);
