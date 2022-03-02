@@ -79,8 +79,14 @@ export default function useHooks_Touch_event(ref) {
   /////////////////////////////////////
 
   const handleStart = (e) => {
+    // Exclude element in the touch zone area contains data-touch="false"
+    if (e.target.dataset.touch && e.target.dataset.touch === "false") {
+      return;
+    }
+
     if (ref.current && ref.current.contains(e.target)) {
       e.preventDefault();
+      e.stopPropagation();
       e = getPointer(e);
 
       setOnTouch((S) => ({
@@ -100,15 +106,11 @@ export default function useHooks_Touch_event(ref) {
     }
   };
 
-  //You can un-edit the direction to retain the state of the last move.
-
   const handleEnd = (event) => {
     if (onTouch.start) {
       setOnTouch((S) => ({
         ...S,
         start: false,
-        direction_X: "Stand by",
-        direction_Y: "Stand by",
       }));
     }
   };

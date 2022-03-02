@@ -69,7 +69,7 @@ function App() {
                 </tr>
 
                 <tr>
-                  <td>Direction</td>
+                  <td>Last move</td>
                   <td> {onTouch.direction_X}</td>
                   <td>{onTouch.direction_Y}</td>
                 </tr>
