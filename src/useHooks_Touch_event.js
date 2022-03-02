@@ -79,32 +79,38 @@ export default function useHooks_Touch_event(ref) {
   /////////////////////////////////////
 
   const handleStart = (e) => {
-    e.preventDefault();
-    e = getPointer(e);
+    if (ref.current && ref.current.contains(e.target)) {
+      e.preventDefault();
+      e = getPointer(e);
 
-    setOnTouch((S) => ({
-      ...S,
-      start: true,
-      start_X: e.clientX.toFixed(2),
-      start_Y: e.clientY.toFixed(2),
-      move_X: 0,
-      move_Y: 0,
-      translate_X: 0,
-      translate_Y: 0,
-      percent_X: 0,
-      percent_Y: 0,
-      percent_PageX: 0,
-      percent_PageY: 0,
-    }));
+      setOnTouch((S) => ({
+        ...S,
+        start: true,
+        start_X: e.clientX.toFixed(2),
+        start_Y: e.clientY.toFixed(2),
+        move_X: 0,
+        move_Y: 0,
+        translate_X: 0,
+        translate_Y: 0,
+        percent_X: 0,
+        percent_Y: 0,
+        percent_PageX: 0,
+        percent_PageY: 0,
+      }));
+    }
   };
 
+  //You can un-edit the direction to retain the state of the last move.
+
   const handleEnd = (event) => {
-    setOnTouch((S) => ({
-      ...S,
-      start: false,
-      direction_X: "Stand by",
-      direction_Y: "Stand by",
-    }));
+    if (onTouch.start) {
+      setOnTouch((S) => ({
+        ...S,
+        start: false,
+        direction_X: "Stand by",
+        direction_Y: "Stand by",
+      }));
+    }
   };
 
   const handleResize = () => {
