@@ -7,8 +7,6 @@ function App() {
   const refTouch = useRef(null);
   const { onTouch } = useHooks_Touch_event(refTouch);
 
-  useEffect(() => {}, [onTouch.start]);
-
   return (
     <div className="App">
       <section className="demo">
