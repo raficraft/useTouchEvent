@@ -5,6 +5,12 @@ import React, {
   useState,
 } from "react";
 
+/**
+ *
+ * @param {Element} ref
+ * @returns
+ */
+
 export default function useHooks_Touch_event(ref) {
   const [onTouch, setOnTouch] = useState({
     size_X: 0,
