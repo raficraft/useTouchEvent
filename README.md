@@ -1,14 +1,20 @@
 # Hooks React useTouchEvent 
 [Live demo, hosting with Netlify](https://usetouchevent.netlify.app/)
 
+<br>
+
 # About
 
-UseTouchEvents est un hooks pour vos composant React. Il permet de récuperer les différentes coordonnées et valeur lorsque l'utilisateur intérargie avec son périphérique aussi bien avec le doigt sur un smartphone ou bien avec la souris pour un pc de bureau.
+UseTouchEvents is a hook for your React components. It allows to retrieve the different coordinates and values ​​when the user interacts with his device either with his finger on a smartphone or with the mouse for a desktop PC.
 
-Axe d'améliorer :
+Axe d'amélioration :
 
 - Detecter des formes dessinés determiner (cercle, carré, triangle...)
 
+
+![test](./public/assets/img/social/socialCard.jpg)
+
+<br>
 
 # Features
 
@@ -19,6 +25,8 @@ Axe d'améliorer :
 - Know the distance traveled in percent in the element targeted and the screen
 - Disabled when two fingers touch the screen
 - Mouse compatibility.
+
+<br>
 
 # Documentation
 
@@ -60,8 +68,9 @@ This hooks return an object contenant there value.
     direction_Y: "Stand by",
 
 ```
+<br>
 
-# Utilisation
+# Use
 
 Import, call the hooks in your component , instantiate a ref and bind dom element to hooks
 
