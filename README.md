@@ -1,4 +1,4 @@
-# Hooks React useTouchEvent 
+# UseTouchEvent hooks for react
 [Live demo, hosting with Netlify](https://usetouchevent.netlify.app/)
 
 <br>
@@ -7,9 +7,9 @@
 
 UseTouchEvents is a hook for your React components. It allows to retrieve the different coordinates and values ​​when the user interacts with his device either with his finger on a smartphone or with the mouse for a desktop PC.
 
-Axe d'amélioration :
+Area for improvement :
 
-- Detecter des formes dessinés determiner (cercle, carré, triangle...)
+- Detect drawn shapes determine (circle, square, triangle...)
 
 
 ![test](./public/assets/img/social/socialCard.jpg)
