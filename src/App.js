@@ -1,7 +1,7 @@
 import "./App.css";
 import "./App.scss";
 import useHooks_Touch_event from "./useHooks_Touch_event";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 function App() {
   const refTouch = useRef(null);

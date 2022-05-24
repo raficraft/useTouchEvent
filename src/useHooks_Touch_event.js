@@ -41,10 +41,10 @@ export default function useHooks_Touch_event(ref) {
   /////////////////////////////////////
 
   function debounce(callback, delay) {
-    var timer;
+    let timer;
     return function () {
-      var args = arguments;
-      var context = this;
+      const args = arguments;
+      const context = this;
       clearTimeout(timer);
       timer = setTimeout(function () {
         callback.apply(context, args);
@@ -112,7 +112,7 @@ export default function useHooks_Touch_event(ref) {
     }
   };
 
-  const handleEnd = (event) => {
+  const handleEnd = () => {
     if (onTouch.start) {
       setOnTouch((S) => ({
         ...S,
@@ -224,7 +224,7 @@ export default function useHooks_Touch_event(ref) {
       window.removeEventListener("touchend", handleEnd, true);
       window.removeEventListener("touchmove", handleMove, true);
 
-      window.removeEventListener("resize", handleResize, true);
+      window.removeEventListener("resize", debounce(handleResize, 300), true);
     };
   }, [handleStart, handleEnd, handleMove, handleResize]);
 
